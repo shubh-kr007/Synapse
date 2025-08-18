@@ -43,5 +43,17 @@ export const getTechLogos = async (techArray: string[]) => {
 
 export const getRandomInterviewCover = () => {
   const randomIndex = Math.floor(Math.random() * interviewCovers.length);
-  return `/covers${interviewCovers[randomIndex]}`;
+  return interviewCovers[randomIndex]; // Remove the `/covers` prefix as it's already in the array
 };
+
+// lib/utils.ts
+export async function checkMicrophonePermission(): Promise<boolean> {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    stream.getTracks().forEach(track => track.stop());
+    return true;
+  } catch (error) {
+    console.error('Microphone permission denied:', error);
+    return false;
+  }
+}

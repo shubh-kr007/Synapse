@@ -123,3 +123,43 @@ export async function getInterviewsByUserId(
     ...doc.data(),
   })) as Interview[];
 }
+// lib/actions/general.action.ts
+export async function saveInterviewProgress(params: {
+  interviewId: string;
+  userId: string;
+  transcript: any[];
+}) {
+  try {
+    const { interviewId, userId, transcript } = params;
+    
+    await db.collection("interview_progress").doc(`${userId}_${interviewId}`).set({
+      interviewId,
+      userId,
+      transcript,
+      lastUpdated: new Date().toISOString(),
+    });
+    
+    return { success: true };
+  } catch (error) {
+    console.error("Error saving progress:", error);
+    return { success: false };
+  }
+}
+
+export async function getInterviewProgress(params: {
+  interviewId: string;
+  userId: string;
+}) {
+  try {
+    const { interviewId, userId } = params;
+    
+    const doc = await db.collection("interview_progress")
+      .doc(`${userId}_${interviewId}`)
+      .get();
+    
+    return doc.exists ? doc.data() : null;
+  } catch (error) {
+    console.error("Error getting progress:", error);
+    return null;
+  }
+}

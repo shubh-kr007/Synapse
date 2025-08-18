@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-    <a href="https://www.youtube.com/@javascriptmastery" target="_blank">
+    <a href="https://www.youtube.com/watch?v=8GK8R77Bd7g" target="_blank">
       <img src="https://github.com/user-attachments/assets/1c0131c7-9f2d-4e3b-b47c-9679e76d8f9a" alt="Project Banner">
     </a>
   <br />
@@ -35,7 +35,7 @@ This repository contains the code corresponding to an in-depth tutorial availabl
 
 If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
 
-<a href="https://www.youtube.com/@javascriptmastery" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
+<a href="https://www.youtube.com/watch?v=8GK8R77Bd7g" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
 
 ## <a name="introduction">🤖 Introduction</a>
 
@@ -51,6 +51,9 @@ If you're getting started and need assistance or face any bugs, join our active 
 - Firebase
 - Tailwind CSS
 - Vapi AI
+- shadcn/ui
+- Google Gemeni
+- Zod
 
 ## <a name="features">🔋 Features</a>
 
@@ -61,6 +64,10 @@ If you're getting started and need assistance or face any bugs, join our active 
 👉 **Get feedback from AI**: Take the interview with AI voice agent, and receive instant feedback based on your conversation.
 
 👉 **Modern UI/UX**: A sleek and user-friendly interface designed for a great experience.
+
+👉 **Interview Page**: Conduct AI-driven interviews with real-time feedback and detailed transcripts.
+
+👉 **Dashboard**: Manage and track all your interviews with easy navigation.
 
 👉 **Responsiveness**: Fully responsive design that works seamlessly across devices.
 
@@ -81,8 +88,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone
-cd prepwise
+git clone https://github.com/adrianhajdin/ai_mock_interviews.git
+cd ai_mock_interviews
 ```
 
 **Installation**
@@ -117,7 +124,7 @@ FIREBASE_CLIENT_EMAIL=
 FIREBASE_PRIVATE_KEY=
 ```
 
-Replace the placeholder values with your actual **[Firebase](https://firebase.google.com/)**, **[Vapi](https://vapi.ai)**, and **[Imagekit](https://imagekit.io/)** credentials.
+Replace the placeholder values with your actual **[Firebase](https://firebase.google.com/)**, **[Vapi](https://vapi.ai/?utm_source=youtube&utm_medium=video&utm_campaign=jsmastery_recruitingpractice&utm_content=paid_partner&utm_term=recruitingpractice)** credentials.
 
 **Running the Project**
 
@@ -665,10 +672,42 @@ system:
 
 </details>
 
+<details>
+<summary><code>Dummy Interviews:</code></summary>
+
+```javascript
+export const dummyInterviews: Interview[] = [
+  {
+    id: "1",
+    userId: "user1",
+    role: "Frontend Developer",
+    type: "Technical",
+    techstack: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+    level: "Junior",
+    questions: ["What is React?"],
+    finalized: false,
+    createdAt: "2024-03-15T10:00:00Z",
+  },
+  {
+    id: "2",
+    userId: "user1",
+    role: "Full Stack Developer",
+    type: "Mixed",
+    techstack: ["Node.js", "Express", "MongoDB", "React"],
+    level: "Senior",
+    questions: ["What is Node.js?"],
+    finalized: false,
+    createdAt: "2024-03-14T15:30:00Z",
+  },
+];
+```
+
+</details>
+
 
 ## <a name="links">🔗 Assets</a>
 
-Public assets used in the project can be found [here](https://drive.google.com/file/d/1nW_4KcVWxM_CWJKTCQf2Wprtmz2WlyFW/view?usp=sharing)
+Public assets used in the project can be found [here](https://drive.google.com/drive/folders/1DuQ9bHH3D3ZAN_CFKfBgsaB8DEhEdnog?usp=sharing)
 
 ## <a name="more">🚀 More</a>
 
@@ -680,4 +719,3 @@ detailed explanations, cool features, and exercises to boost your skills. Give i
 <a href="https://jsmastery.pro/next15" target="_blank">
    <img src="https://github.com/user-attachments/assets/b8760e69-1f81-4a71-9108-ceeb1de36741" alt="Project Banner">
 </a>
-```

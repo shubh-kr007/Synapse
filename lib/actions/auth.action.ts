@@ -16,13 +16,14 @@ export async function setSessionCookie(idToken: string) {
   });
 
   // Set cookie in the browser
-  cookieStore.set("session", sessionCookie, {
-    maxAge: SESSION_DURATION,
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    path: "/",
-    sameSite: "lax",
-  });
+ // In auth.action.ts
+cookieStore.set("session", sessionCookie, {
+  maxAge: SESSION_DURATION,
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  path: "/",
+  sameSite: "strict", // Change from "lax" to "strict" for better security
+});
 }
 
 export async function signUp(params: SignUpParams) {
@@ -79,9 +80,15 @@ export async function signIn(params: SignInParams) {
       };
 
     await setSessionCookie(idToken);
+    
+    // Add this return statement
+    return {
+      success: true,
+      message: "Signed in successfully.",
+    };
   } catch (error: any) {
-    console.log("");
-
+    console.error("Sign in error:", error); // Fix the console.log("")
+    
     return {
       success: false,
       message: "Failed to log into account. Please try again.",
